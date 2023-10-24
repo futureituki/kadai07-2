@@ -1,15 +1,25 @@
 import './App.css'
+import background from './assets/background.mp4'
+import githubIcon from './assets/github.svg'
+import homepageIcon from './assets/homepage.svg'
+import instaIcon from './assets/instagram.svg'
+import twitterIcon from './assets/twitter.svg'
 import ListItem from "./components/ListItem"
 import MyImage from './components/MyImage'
 import { ListItems } from "./constant/list"
 function App() {
-
+  const iconArr = [
+    homepageIcon,
+    instaIcon,
+    githubIcon,
+    twitterIcon
+  ]
   return (
     <div className="main">
       <div className='h-screen w-screen relative'>
       <div class="absolute inset-0 overflow-hidden">
         <video class="absolute inset-0 object-cover w-full h-full" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src={'/background.mp4'} type="video/mp4" />
+            <source src={background} type="video/mp4" />
         </video>
     </div>
         <div className='absolute left-1/2 top-32 z-10 -translate-x-1/2 flex flex-col justify-center gap-4'>
@@ -24,7 +34,7 @@ function App() {
             <ListItem key={index} link={item.link}>
               <span className="flex items-center gap-6 justify-center w-60">     
                 <span>
-                  <img className="w-6 h-6 object-cover" src={`${item.icon}.svg`} width={30} height={30}/>
+                  <img className="w-6 h-6 object-cover" src={iconArr[index]} width={30} height={30}/>
                 </span> 
                 <span className="text-lg"> 
                   {item.name}
