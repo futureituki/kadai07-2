@@ -1,5 +1,4 @@
 import './App.css'
-import background from './assets/background.mp4'
 import ListItem from "./components/ListItem"
 import MyImage from './components/MyImage'
 import { ListItems } from "./constant/list"
@@ -10,7 +9,7 @@ function App() {
       <div className='h-screen w-screen relative'>
       <div class="absolute inset-0 overflow-hidden">
         <video class="absolute inset-0 object-cover w-full h-full" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-            <source src={background} type="video/mp4" />
+            <source src={'/background.mp4'} type="video/mp4" />
         </video>
     </div>
         <div className='absolute left-1/2 top-32 z-10 -translate-x-1/2 flex flex-col justify-center gap-4'>
